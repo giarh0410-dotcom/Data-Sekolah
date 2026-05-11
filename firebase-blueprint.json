@@ -1,0 +1,325 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "Student record in the school database",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "nis": { "type": "string", "description": "Nomor Induk Siswa" },
+        "nisn": { "type": "string", "description": "Nomor Induk Siswa Nasional" },
+        "class": { "type": "string" },
+        "gender": { "type": "string", "enum": ["Male", "Female"] },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "nik": { "type": "string", "description": "Student NIK" },
+        "pob": { "type": "string", "description": "Place of Birth" },
+        "dob": { "type": "string", "description": "Date of Birth" },
+        "religion": { "type": "string" },
+        "noKK": { "type": "string" },
+        "domicileAddress": { "type": "string" },
+        "kkAddress": { "type": "string" },
+        "rombel": { "type": "string", "description": "Study Group / Rombongan Belajar" },
+        "akteRegNo": { "type": "string", "description": "Birth Certificate Registration Number" },
+        "previousSchool": { "type": "string", "description": "Origin School" },
+        "childOrder": { "type": "number", "description": "Child position in family" },
+        "siblingsCount": { "type": "number", "description": "Number of siblings" },
+        "weight": { "type": "number", "description": "Weight in kg" },
+        "height": { "type": "number", "description": "Height in cm" },
+        "fatherName": { "type": "string" },
+        "fatherNik": { "type": "string" },
+        "fatherPob": { "type": "string" },
+        "fatherDob": { "type": "string" },
+        "fatherEducation": { "type": "string" },
+        "fatherOccupation": { "type": "string" },
+        "fatherIncome": { "type": "string" },
+        "fatherPhone": { "type": "string", "description": "Father's phone number" },
+        "motherName": { "type": "string" },
+        "motherNik": { "type": "string" },
+        "motherPob": { "type": "string" },
+        "motherDob": { "type": "string" },
+        "motherEducation": { "type": "string" },
+        "motherOccupation": { "type": "string" },
+        "motherIncome": { "type": "string" },
+        "motherPhone": { "type": "string", "description": "Mother's phone number" },
+        "guardianName": { "type": "string" },
+        "guardianNik": { "type": "string" },
+        "guardianPob": { "type": "string" },
+        "guardianDob": { "type": "string" },
+        "guardianEducation": { "type": "string" },
+        "guardianOccupation": { "type": "string" },
+        "guardianIncome": { "type": "string" },
+        "scanKK": { "type": "string", "description": "URL to Family Card scan" },
+        "scanAkte": { "type": "string", "description": "URL to Birth Certificate scan" },
+        "scanKTPParent": { "type": "string", "description": "URL to Parent ID scan" },
+        "scanRaport": { "type": "string", "description": "URL to Report Card scan" },
+        "scanIjasah": { "type": "string", "description": "URL to Certificate scan" },
+        "photoUrl": { "type": "string", "description": "URL to student face photo for attendance" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "nis", "class"]
+    },
+    "Teacher": {
+      "title": "Teacher",
+      "description": "Teacher record in the school database",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "employeeId": { "type": "string", "description": "NIP/NUPTK" },
+        "subject": { "type": "string" },
+        "gender": { "type": "string", "enum": ["Male", "Female"] },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "position": { "type": "string", "description": "Jabatan" },
+        "nuptk": { "type": "string" },
+        "skYayasan": { "type": "string" },
+        "skMengajar": { "type": "string" },
+        "education": { "type": "string" },
+        "photoUrl": { "type": "string", "description": "URL to teacher face photo for attendance" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "employeeId", "subject"]
+    },
+    "Staff": {
+      "title": "Staff",
+      "description": "Staff record in the school database",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "position": { "type": "string" },
+        "gender": { "type": "string", "enum": ["Male", "Female"] },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "nuptk": { "type": "string" },
+        "skYayasan": { "type": "string" },
+        "education": { "type": "string" },
+        "photoUrl": { "type": "string", "description": "URL to staff face photo for attendance" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "employeeId", "position"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Application user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "viewer"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Global application settings",
+      "type": "object",
+      "properties": {
+        "logoUrl": { "type": "string", "description": "URL to the school logo" },
+        "schoolName": { "type": "string", "description": "Name of the school" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Rombel": {
+      "title": "Rombel",
+      "description": "Study group or classroom group",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "description": "Name of the rombel, e.g. VII-A" },
+        "class": { "type": "string", "description": "Grade level, e.g. VII" },
+        "homeroomTeacherId": { "type": "string", "description": "ID of the homeroom teacher" },
+        "homeroomTeacherName": { "type": "string", "description": "Name of the homeroom teacher" },
+        "academicYear": { "type": "string" },
+        "studentCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "class"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Attendance record for school members",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "memberId": { "type": "string", "description": "ID of the student, teacher, or staff" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "teacher", "staff"] },
+        "method": { "type": "string", "enum": ["Face", "Card", "Manual"] },
+        "status": { "type": "string", "enum": ["Hadir", "Izin", "Sakit", "Alpa"] },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "parentPhone": { "type": "string" },
+        "notified": { "type": "boolean" },
+        "waStatus": { "type": "string", "enum": ["Pending", "Sent", "Failed"] }
+      },
+      "required": ["memberId", "name", "role", "timestamp"]
+    },
+    "Subject": {
+      "title": "Subject",
+      "description": "School subject or course",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "code"]
+    },
+    "ExamSchedule": {
+      "title": "Exam Schedule",
+      "description": "Schedule for an exam session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "date": { "type": "string" },
+        "startTime": { "type": "string" },
+        "endTime": { "type": "string" },
+        "proctorId": { "type": "string" },
+        "proctorName": { "type": "string" },
+        "room": { "type": "string" },
+        "rombelName": { "type": "string" }
+      },
+      "required": ["subjectId", "date", "startTime"]
+    },
+    "Question": {
+      "title": "Question",
+      "description": "Exam question for a specific subject",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "text": { "type": "string" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "correctOption": { "type": "number", "description": "Index of the correct option" },
+        "points": { "type": "number" },
+        "class": { "type": "string" }
+      },
+      "required": ["subjectId", "text", "options", "correctOption", "class"]
+    },
+    "ExamRoom": {
+      "title": "Exam Room",
+      "description": "Physical room used for exams",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "description": "Room name, e.g. R-01" },
+        "capacity": { "type": "number", "description": "Student capacity" },
+        "location": { "type": "string", "description": "Building or floor" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name"]
+    },
+    "CbtSession": {
+      "title": "CBT Session",
+      "description": "Active or scheduled CBT session instance",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "examScheduleId": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "token": { "type": "string", "maxLength": 6 },
+        "isActive": { "type": "boolean" },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "endedAt": { "type": "string", "format": "date-time" },
+        "durationMinutes": { "type": "number" },
+        "studentCount": { "type": "number" },
+        "completedCount": { "type": "number" },
+        "rombelName": { "type": "string" }
+      },
+      "required": ["examScheduleId", "subjectName", "token"]
+    },
+    "StudentExamResult": {
+      "title": "Student Exam Result",
+      "description": "Individual student attempt results for a CBT session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "score": { "type": "number" },
+        "answers": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "description": "Dictionary of questionId to selected option index"
+        },
+        "status": { "type": "string", "enum": ["In Progress", "Finished"] },
+        "startTime": { "type": "string", "format": "date-time" },
+        "finishTime": { "type": "string", "format": "date-time" }
+      },
+      "required": ["sessionId", "studentId", "status"]
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Collection of students"
+    },
+    "/teachers/{teacherId}": {
+      "schema": "Teacher",
+      "description": "Collection of teachers"
+    },
+    "/staff/{staffId}": {
+      "schema": "Staff",
+      "description": "Collection of staff members"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and roles"
+    },
+    "/settings/{settingId}": {
+      "schema": "Settings",
+      "description": "Global settings"
+    },
+    "/rombels/{rombelId}": {
+      "schema": "Rombel",
+      "description": "Collection of study groups"
+    },
+    "/attendance/{attendanceId}": {
+      "schema": "Attendance",
+      "description": "Collection of attendance records"
+    },
+    "/subjects/{subjectId}": {
+      "schema": "Subject",
+      "description": "Collection of subjects"
+    },
+    "/examSchedules/{examScheduleId}": {
+      "schema": "ExamSchedule",
+      "description": "Collection of exam schedules"
+    },
+    "/questions/{questionId}": {
+      "schema": "Question",
+      "description": "Collection of exam questions"
+    },
+    "/examRooms/{roomId}": {
+      "schema": "ExamRoom",
+      "description": "Collection of physical exam rooms"
+    },
+    "/cbtSessions/{sessionId}": {
+      "schema": "CbtSession",
+      "description": "Active CBT sessions"
+    },
+    "/examResults/{resultId}": {
+      "schema": "StudentExamResult",
+      "description": "Exam results for students"
+    }
+  }
+}

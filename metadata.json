@@ -1,0 +1,5 @@
+{
+  "name": "SMP Islam Modern Al Fakhir - Database",
+  "description": "Aplikasi manajemen database siswa, guru, dan staf sekolah dengan fitur autentikasi dan kontrol akses admin.",
+  "requestFramePermissions": ["camera"]
+}
